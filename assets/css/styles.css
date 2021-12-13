@@ -1,0 +1,327 @@
+:root {
+  /* PRIMARY COLORS */
+
+  --softCyan: hsl(174, 77%, 80%); /*(Full Slider Bar)*/
+  --strongCyan: hsl(174, 86%, 45%); /*(Slider Backround)*/
+  --lightGrayishRed: hsl(14, 92%, 95%); /*(Discount Background)*/
+  --lightRed: hsl(15, 100%, 70%); /*(Discount Text)*/
+  --paleBlue: hsl(226, 100%, 87%); /*(CTA Text)*/
+
+  /* NEUTRAL COLORS */
+
+  --white: hsl(0, 0%, 100%); /* (Pricing Component Background) */
+  --veryPaleBlue: hsl(230, 100%, 99%); /* (Main Background) */
+  --lightGrayishBlue: hsl(224, 65%, 95%); /* (Empty Slider Bar) */
+  --lightGrayishBlue: hsl(223, 50%, 87%); /* (Toggle Background) */
+  --grayishBlue: hsl(225, 20%, 60%); /* (Text) */
+  --darkDesaturatedBlue: hsl(227, 35%, 25%); /* (Text & CTA Background) */
+
+  /* FONTS */
+  --font: "Manrope", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+  scrollbar-color: var(--softCyan);
+}
+body {
+  font-family: var(--font);
+  font-weight: 600;
+  margin: 0 auto;
+  font-size: 15px;
+}
+.main {
+  max-width: 1440px;
+  margin: 0 auto;
+  background-image: url("../../images/pattern-circles.svg"),
+    url("../../images/bg-pattern.svg");
+  background-repeat: no-repeat;
+  background-position: center 12%, 0 0;
+  text-align: center;
+  padding-top: 117px;
+  padding-bottom: 130px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 800;
+  position: relative;
+}
+.subtitle {
+  color: var(--grayishBlue);
+  font-size: 15px;
+  margin-top: 10px;
+  font-weight: 600;
+  margin-bottom: 90px;
+}
+.container {
+  display: grid;
+  max-width: 540px;
+  height: auto;
+  background: var(--white);
+  margin: 0 auto;
+  padding: 50px 50px 50px 50px;
+  box-shadow: 5px 5px 20px var(--lightGrayishBlue);
+}
+.container .views {
+  justify-self: left;
+  grid-column: 1;
+  grid-row: 1;
+  margin-top:15px;
+}
+.container .pricing {
+  justify-self: right;
+  grid-column: 1;
+  grid-row: 1;
+}
+.pricing #salida {
+  font-size: 35px;
+  color: var(--darkDesaturatedBlue);
+  font-weight: 800;
+}
+.pricing .__pricing {
+  color: var(--grayishBlue);
+  font-weight: 800;
+}
+.__views {
+  letter-spacing: 3px;
+  color: var(--grayishBlue);
+}
+.range {
+  padding: 40px 0px;
+}
+
+input[type="range"] {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #858fad;
+  background-color: #293356;
+  font-size: 8px;
+  font-weight: 600;
+  border-radius: 21px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.__range {
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 7px;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#a5f3eb),
+    color-stop(50%, #a5f3eb),
+    color-stop(50%, #eaeefb),
+    to(#eaeefb)
+  );
+  background: linear-gradient(
+    to right,
+    #a5f3eb 0%,
+    #a5f3eb 50%,
+    #eaeefb 50%,
+    #eaeefb 100%
+  );
+  border-radius: 4px;
+}
+
+.__range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #10d5c2 url("../../images/icon-slider.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  -webkit-box-shadow: 0 5px 20px #10d5c2;
+  box-shadow: 0 5px 20px #10d5c2;
+}
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 25px;
+  font-size: 10px;
+  padding: 20px 0px 40px 0px;
+  border-bottom: 1px solid var(--grayishBlue);
+}
+.toggle span {
+  color: var(--grayishBlue);
+  font-size: 10px;
+}
+.toggle .discount {
+  position: relative;
+  color: var(--lightRed);
+  font-weight: 800;
+  background: var(--lightGrayishRed);
+  border-radius: 10px;
+  padding: 0px 5px;
+}
+.toggle .discount-mobile {
+  position: relative;
+  color: var(--lightRed);
+  font-weight: 800;
+  background: var(--lightGrayishRed);
+  border-radius: 10px;
+  padding: 0px 5px;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--strongCyan);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--strongCyan);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(18px);
+  -ms-transform: translateX(18px);
+  transform: translateX(19px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.trials {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 0px 40px 0px;
+}
+
+.trials ul {
+  list-style: none;
+}
+
+.trials ul li {
+  text-align: left;
+  padding-bottom: 5px;
+}
+.trials ul li a {
+  padding: 0px 25px;
+  text-decoration: none;
+  font-size: 12px;
+  color: var(--grayishBlue);
+}
+.trials ul li::before {
+  content: url("../../images/icon-check.svg");
+  position: absolute;
+}
+
+.trialButton {
+  width: 10.625rem;
+  height: 2.5rem;
+  background: var(--darkDesaturatedBlue);
+  border-radius: 3rem;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  font-family: var(--font);
+  color: var(--grayishBlue);
+  font-weight: 800;
+}
+
+.trialButton:hover {
+  background: hsl(227deg 31% 46%);
+  color: var(--white);
+  transition: 0.5s ease-out;
+}
+
+.discount-mobile {
+  display: none;
+}
+@media (max-width: 650px) {
+  .title {
+    font-size: 18px;
+  }
+  .subtitle {
+    padding: 0px 100px;
+  }
+  .discount {
+    display: none;
+  }
+  .discount-mobile {
+    display: block;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 35px;
+    padding: 27px 25px 36px;
+  }
+  .views,
+  .trials {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+  .views {
+    order: 0;
+  }
+  .range {
+    order: 1;
+  }
+  .pricing {
+    order: 2;
+  }
+  .toggle {
+    column-gap: 10px;
+    order: 3;
+  }
+  .trials {
+    order: 4;
+  }
+}

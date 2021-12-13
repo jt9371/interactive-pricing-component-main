@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Interactive pricing component</title>
+  </head>
+  <body>
+    <main class="main">
+      <h1 class="title">Simple, traffic-based pricing</h1>
+      <h2 class="subtitle">
+        Sign-up for our 30-day trial. No credit card required.
+      </h2>
+      <section class="container">
+        <div class="views">
+          <span class="__views"
+            ><output id="pageviews"></output> PAGEVIEWS</span
+          >
+        </div>
+        <div class="pricing">
+          <span class="__pricing"><output id="salida"></output> / month</span>
+        </div>
+        <div class="range">
+          <input
+            type="range"
+            min="0"
+            max="4"
+            step="1"
+            name=""
+            class="__range"
+            id="slideRange"
+          />
+        </div>
+
+        <div class="toggle">
+          <span>Monthly Billing</span>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round" id="switch"></span>
+          </label>
+          <span>Yearly Billing</span>
+          <span class="discount">25% Discount</span>
+          <span class="discount-mobile">-25%</span>
+        </div>
+
+        <div class="trials">
+          <ul>
+            <li><a href="#">Unlimited websites</a></li>
+            <li><a href="#">100% data ownership</a></li>
+            <li><a href="#">Email reports</a></li>
+          </ul>
+
+          <button class="trialButton">Start my trial</button>
+        </div>
+      </section>
+    </main>
+    <script src="./assets/js/index.js"></script>
+  </body>
+</html>
